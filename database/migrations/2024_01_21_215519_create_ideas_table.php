@@ -8,11 +8,17 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * 
+     * varchar 240 character
+     * likes int by default 0
+     * created_at / updated_at
      */
     public function up(): void
     {
         Schema::create('ideas', function (Blueprint $table) {
             $table->id();
+            $table->string('content');
+            $table->unsignedInteger('likes')->default(0);
             $table->timestamps();
         });
     }
