@@ -9,6 +9,14 @@
                         </a></h5>
                 </div>
             </div>
+            {{-- adding button to delete shared ideas --}}
+            <div>
+                        <form method="post" action="{{route('ideas.destroy',$idea->id)}}">
+                            @csrf
+                            @method('delete')
+                        <button type="" class="btn btn-danger">X</button>
+                        </form>
+            </div>
         </div>
     </div>
     
