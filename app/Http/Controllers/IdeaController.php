@@ -17,10 +17,8 @@ class IdeaController extends Controller
         return redirect()->route('dashboard')->with('success', 'Idea created successfully');
         
     }
-    public function show(Idea $id) {
-        return view('ideas.show',[
-            'idea'=> $id,
-        ]);
+    public function show(Idea $idea) {
+        return view('ideas.show',compact('idea'));
     }
 
     public function destroy(Idea $id){
