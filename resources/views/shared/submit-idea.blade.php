@@ -5,7 +5,7 @@
                         @csrf
 
                     <div class="mb-3">
-                        <textarea class="form-control" id="idea" rows="3" name="idea"></textarea>
+                        <textarea class="form-control" id="content" rows="3" name="content"></textarea>
                         @error('idea')
                             <span class="fs-6 text-danger">{{ $message }}</span>
                         @enderror
