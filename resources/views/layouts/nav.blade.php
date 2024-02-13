@@ -8,15 +8,31 @@ data-bs-theme="dark">
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
+
+            {{-- check if user is not logged in they show this ul --}}
+           @guest()
+
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/login">Login</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/register">Register</a>
+            </li> 
+            @endguest
+            {{-- check if user is logged in  they show this  ul--}}
+            @auth()
+
+            <li class="nav-item">
+                <a class="nav-link" href="/profile">{{Auth::user()->name}}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/profile">Profile</a>
+                <form action="{{route('logout')}}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-danger btn-sm" > Logout </button>
+                </form>
             </li>
+            
+            @endauth
         </ul>
     </div>
 </div>
