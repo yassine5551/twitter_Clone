@@ -22,7 +22,7 @@
 
 @guest()
     <h3>Login to share ideas</h3>
-    <textarea class="form-control" id="content" rows="3" name="content"></textarea>
-    <button type="submit" class="btn btn-dark"> Share </button>
+    <textarea class="form-control" id="content" rows="3" name="content" placeholder="If you dont have an account you can register in few seconds"></textarea>
+    
 
 @endguest
